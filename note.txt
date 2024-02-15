@@ -1,0 +1,13 @@
+normal way to react
+npx create-react-app day1
+cd day1
+npm run start 
+npm run build
+
+
+vite
+ npm create vite@latest 
+ isme folder create ho jayega
+ cd day1
+ npm i
+ npm run dev
