@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>
+        this is tutorial for react js
+    </h1>
+</body>
+<script>
+"use strict";
+    let a=34;
+    let b='This is me';
+    // const c=45;
+    console.log(`${a} , ${b}`);
+    // a=222+4;
+    // console.log(a);
+
+// Number
+// Objects
+// Booleans
+// String
+// undefined
+// Null
+
+function hello(){
+    console.log("hey vishal");
+}
+hello()
+
+let obj1={  //console me likho jakar obj1
+    r:43,
+    m:88,
+func:function myfunc(number){
+    console.log("The number is "+number);
+}
+} 
+document.addEventListener("click",function click(){
+    console.log("clicked");
+    // alert("hello")
+let conf=confirm("Are you sure ?")
+console.log(conf);
+})
+
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+    
+// }
+
+let arr=[23,45,67];
+console.log(this);
+function myfunc(number){
+    console.log("The number is "+this);
+}
+myfunc()
+
+
+let obj2={
+    a:this,
+    // myfunc:(number)  => {
+    myfunc:function(number){
+        console.log(this);
+    }
+}
+obj2.myfunc();
+console.log(obj2.a);
+
+setTimeout(() => {
+    console.log("yahhh");
+},3000);
+
+console.log("mai neeche wali script hoon");
+
+</script>
+</html>

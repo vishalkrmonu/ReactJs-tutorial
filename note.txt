@@ -1,6 +1,6 @@
 normal way to react
-npx create-react-app day1
-cd day1
+npx create-react-app demo
+cd demo
 npm run start 
 npm run build
 
@@ -11,3 +11,5 @@ vite
  cd day1
  npm i
  npm run dev
+
+ https://legacy.reactjs.org/docs/hello-world.html
