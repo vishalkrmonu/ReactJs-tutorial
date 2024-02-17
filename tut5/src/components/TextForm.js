@@ -6,17 +6,23 @@ const handleUpClick= ()=>{
   console.log("Uppercase was clicked" +text);
   let newText=text.toUpperCase();
   setText(newText)
+  props.showAlert("converted to upper case","success")
+
 }
 
 const handleLoClick= ()=>{
   console.log("Uppercase was clicked" +text);
   let newText=text.toLowerCase();
   setText(newText)
+  props.showAlert("converted to lower case","success")
+
 }
 
 const handleClearClick= ()=>{
   let newText='';
   setText(newText)
+  props.showAlert("Text cleared","success")
+
 }
 
 const handleOnChange= (event)=>{
@@ -26,14 +32,18 @@ const handleOnChange= (event)=>{
 
 const handleCopy= ()=>{
   var text=document.getElementById("myBox");
-  text.Select();
+  text.select();
   navigator.clipboard.writeText(text.value);
+  props.showAlert("copy to clipboard","success")
+
 }
 
-
+ 
 const handleExtraSpaces=()=>{
   let newText=text.split(/[ ]+/);
   setText(newText.join(" "))
+  props.showAlert("Remove extra space","success")
+
 }
 
   //DEclare a new state variable which we will call count
@@ -44,10 +54,10 @@ const handleExtraSpaces=()=>{
 
   return (
     <>
-    <div className="container">
+    <div className="container" style={{color:props.mode ==='dark'?'white':'#042743'}}>
       <h3>{props.heading} </h3>
       <div className="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+        <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode ==='dark'?'grey':'white', color:props.mode ==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
       </div>
       <button className="btn btn-primary mx-1" onClick={handleUpClick}> Convert to Uppercase</button>
       <button className="btn btn-primary mx-1" onClick={handleLoClick}> Convert to Lowercase</button>
@@ -58,12 +68,12 @@ const handleExtraSpaces=()=>{
 
     </div>
 
-    <div className="container" my-3>
+    <div className="container" my-3 style={{color:props.mode ==='dark'?'white':'#042743'}}>
       <h4>Your text summary</h4>
       <p>{text.split(' ').length} words and {text.length} characters</p>
       <p>{0.008*text.split(' ').length} Minutes read</p>
       <h4>Preview</h4>
-      <p>{text}</p>
+      <p>{text.length>0 ? text:"Enter something to preview it here"}</p>
     </div>
     </>
   );
