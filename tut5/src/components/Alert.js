@@ -8,7 +8,9 @@ const capitalize =(word) =>{
 
 
   return (
-    props.alert && <div
+    <div style={{height:'70px'}}>
+
+    {props.alert && <div
       className={`alert alert-${props.alert.type}  alert-dismissible fade show`} role="alert">
      
      <strong>{capitalize(props.alert.type)} </strong> :{props.alert.msg}
@@ -19,6 +21,7 @@ const capitalize =(word) =>{
         aria-label="Close"
       ></button> */}
       {/* jo side me cross ka symbol tha uske liye tha uper ka code */}
+      </div>}
     </div>
   );
 }

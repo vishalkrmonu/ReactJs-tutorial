@@ -69,7 +69,7 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text to analyze "
+                  heading=" Try TextUtils  -word Counter, Character Counter, Remove extra spaces"
                   mode={mode}
                 />
               }
