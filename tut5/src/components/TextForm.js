@@ -22,15 +22,14 @@ export default function TextForm(props) {
   };
 
   const handleOnChange = (event) => {
-    // console.log("On change");
     setText(event.target.value);
   };
 
   const handleCopy = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    // var text = document.getElementById("myBox");
+    // text.select();
+    navigator.clipboard.writeText(text);
+    // document.getSelection().removeAllRanges();
     props.showAlert("copy to clipboard", "success");
   };
 
@@ -64,7 +63,7 @@ export default function TextForm(props) {
               color: props.mode === "dark" ? "white" : "#042743",
             }}
             id="myBox"
-            rows="4  "
+            rows="4 "
           ></textarea>
         </div>
         <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
@@ -97,7 +96,7 @@ export default function TextForm(props) {
         <h4>Your text summary</h4>
         <p>
           { 
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !==0 }).length
           }
           words and {text.length} characters
