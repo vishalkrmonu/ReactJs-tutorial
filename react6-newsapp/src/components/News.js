@@ -1,7 +1,24 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spin from "./Spin";
+import  PropTypes from 'prop-types';
+
+
+
 export class News extends Component {
+static defaultProps={
+  country:'in',
+  pageSize:8,
+  category:"general"
+
+}
+static propTypes={
+  country:PropTypes.string,
+  pageSize:PropTypes.number,
+  category:PropTypes.string
+
+}
+
   constructor() {
     super();
     console.log("hello  i am constructor from news component");
@@ -14,7 +31,7 @@ export class News extends Component {
 
   async componentDidMount() {
     console.log("cdm");
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -28,7 +45,7 @@ export class News extends Component {
 
   handlePrevClick = async () => {
     console.log("previous");
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=${
       this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
@@ -50,7 +67,7 @@ export class News extends Component {
         Math.ceil(this.state.totalResults / this.props.pageSize)
       )
     ) {
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=${
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=74872a9b8e6944feb7b8f84c3f37a3bf&page=${
         this.state.page + 1
       }&pageSize=${this.props.pageSize}`;
       this.setState({ loading: true });
@@ -68,7 +85,7 @@ export class News extends Component {
     console.log("render");
     return (
       <div className="conatiner my-3">
-        <h1 className="text-center">NewsMonkey - Top HeadLines</h1>
+        <h1 className="text-center" style={{margin:'35px opx'}}>NewsMonkey - Top HeadLines</h1>
         {this.state.loading && <Spin />}
         <div className="row">
           {!this.state.loading &&

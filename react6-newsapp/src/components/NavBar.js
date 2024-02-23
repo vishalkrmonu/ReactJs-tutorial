@@ -30,14 +30,19 @@ export class Navbar extends Component {
                     Home
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/about">
-                    About
-                  </a>
-                </li>
-                
-                 </ul> 
-              
+                <li className="nav-item"> <a className="nav-link" href="/about"> About </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Business </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Entertainment </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> General </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Health </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Science </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Sports </a> </li>
+                <li className="nav-item"> <a className="nav-link" href="/about"> Technology </a> </li>
+
+
+
+              </ul>
+
             </div>
           </div>
         </nav>
