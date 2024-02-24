@@ -97,6 +97,9 @@ static propTypes={
                     description={element.description ? element.description : ""}
                     imageurl={element.urlToImage}
                     newsUrl={element.url}
+                    author={element.author}
+                    date={element.publishedAt}
+                    source={element.source.name}
                   />
                 </div>
               );
