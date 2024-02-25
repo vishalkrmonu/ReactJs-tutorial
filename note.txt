@@ -13,3 +13,32 @@ vite
  npm run dev
 
  https://legacy.reactjs.org/docs/hello-world.html
+
+
+
+ Day34
+ React Component Lifecycle
+
+The series of events that happen from the mounting of a React component to its Unmounting.
+Mounting - Birth of your component
+Update - Growth of your component
+Unmount - Death of your component
+
+
+Methods in React Component Lifecycle
+
+The render() method is used to render HTML of the component in react. This method is required for a class based component to render the DOM. It runs during the mounting and updating of your component Render() method should be pure ie you cannot modify state inside it!
+The componentDidUpdate() method runs after the component output has been rendered to the DOM.
+The componentDidUpdate() method is invoked as soon as the updating happens. The most common use case for the componentDidUpdate() method is updating the DOM in response to prop or state changes.
+The componentWillUnmount() lifecycle method is called just before the component is unmounted and destroyed. Usually used to perform cleanups
+
+
+
+diagram for lifecycle (link)
+projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+
+
+npm install --save react-infinite-scroll-component
+ npm i react-top-loading-bar  
